@@ -1,0 +1,27 @@
+{
+  "name": "vue-keeper",
+  "version": "0.4.0",
+  "description": "event plus with vue.js",
+  "main": "dist/keeper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "wjt"
+  },
+  "keywords": [
+    "vue",
+    "events",
+    "keeper",
+    "vue-keeper"
+  ],
+  "repository":{
+    "type" : "git",
+    "url" : "https://github.com/wjtGitHub/vue-keeper.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^2.0.0"
+  }
+}
