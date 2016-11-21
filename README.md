@@ -23,7 +23,7 @@ var vm = new Vue();
 Vue.keeper.on('event-example',function(info){});//Global use
 vm.keeper.on('event-example',function(info){});//Instantiation use
 created() {
-  this.keeper.on('event-example', this.addTodo);
+  this.keeper.on('event-example',"message");
   this.keeper.once('event-example',function(){
     console.log('This event will only trigger once')
   });
