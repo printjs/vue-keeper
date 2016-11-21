@@ -13,7 +13,7 @@ var keeper  = require('vue-keeper');
 
 Vue.use(keeper);
 ```
-If you use <script> to introduce vue-keeper. Can directly look at the next step.
+If you use `<script>` to introduce vue-keeper. Can directly look at the next step.
 
 ##how to use
 ```
