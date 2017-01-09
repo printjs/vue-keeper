@@ -48,7 +48,7 @@ beforeDestroy() {
 ##api
 ###on
 ```
-Vue.keepr.on(event,function(event-name,params){})
+Vue.keepr.on(listener-name,event,function(event-name,params){})
 //event-name is necessary
 //params is not necessary.
 ```
