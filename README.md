@@ -52,14 +52,14 @@ Vue.keepr.on(listener-name,event,function(event-name,params){})
 //event-name is necessary
 //params is not necessary.
 ```
-###once
-Ditto，this event will only trigger once
-
 ###emit
 ```
 Vue.keepr.emit(event,params);
 //params is not necessary.
 ```
+###once
+Ditto，this event will only trigger once
+
 ###off
 ```
 Vue.keepr.off('listener-name');
