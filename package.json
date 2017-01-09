@@ -1,6 +1,6 @@
 {
   "name": "vue-keeper",
-  "version": "0.4.0",
+  "version": "1.0.1",
   "description": "event plus with vue.js",
   "main": "dist/keeper.js",
   "scripts": {
