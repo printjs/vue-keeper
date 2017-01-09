@@ -20,8 +20,8 @@ If you use `<script>` to introduce vue-keeper. Can directly look at the next ste
 var vm = new Vue();
 
 //register
-Vue.keeper.on('event-example',function(info){});//Global use
-vm.keeper.on('event-example',function(info){});//Instantiation use
+Vue.keeper.on('listener-name','event-example',function(info){});//Global use
+vm.keeper.on('listener-name','event-example',function(info){});//Instantiation use
 created() {
   this.keeper.on('event-example',"message");
   this.keeper.once('event-example',function(){
@@ -41,14 +41,15 @@ methods: {
 
 //destory
 beforeDestroy() {
-  this.keeper.off('event-example');
+  this.keeper.off('listener-name');
 }
 ```
 
 ##api
 ###on
 ```
-Vue.keepr.on(event,function(params){})
+Vue.keepr.on(event,function(event-name,params){})
+//event-name is necessary
 //params is not necessary.
 ```
 ###once
@@ -61,5 +62,5 @@ Vue.keepr.emit(event,params);
 ```
 ###off
 ```
-Vue.keepr.off(event);
+Vue.keepr.off('listener-name');
 ```
