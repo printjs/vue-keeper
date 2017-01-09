@@ -9,7 +9,7 @@ npm install vue-keeper --save-dev
 ```
 import keeper from 'vue-keeper';
 //or
-var keeper  = require('vue-keeper');
+var keeper = require('vue-keeper');
 
 Vue.use(keeper);
 ```
@@ -23,7 +23,7 @@ var vm = new Vue();
 Vue.keeper.on('listener-name','event-example',function(info){});//Global use
 vm.keeper.on('listener-name','event-example',function(info){});//Instantiation use
 created() {
-  this.keeper.on('event-example',"message");
+  this.keeper.emit('event-example',"message");
   this.keeper.once('event-example',function(){
     console.log('This event will only trigger once')
   });
