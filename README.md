@@ -48,9 +48,9 @@ beforeDestroy() {
 ##api
 ###on
 ```
-Vue.keepr.on(listener-name,event,function(event-name,params){})
-//event-name is necessary
+Vue.keepr.on(listener-name,event,function(params,event-name){})
 //params is not necessary.
+//event-name is necessary
 ```
 ###once
 Ditto，this event will only trigger once
