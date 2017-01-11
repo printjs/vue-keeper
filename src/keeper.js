@@ -31,35 +31,29 @@
   }
 
 
-  function eachUnRegister() {
+  function eachUnRegister(listener){
     var temp = [];
-    listeners.forEach(function (item) {
-      if (!item.once) {
+    listeners.forEach(function(item) {
+      if(item.once&&listener == item.listener){
+      }else{
         temp.push(item);
       }
-    });
+    }); 
     listeners = temp;
   }
 
-  function onceNotify(event, info, delay) {
+
+  function onceRegister(listener, event, fn) {
     if (isConstantExist(event)) {
-      if (typeof delay == "undefined") {
-        delay = 0;
-      }
-      setTimeout(
-        function () {
-          for (var i = 0; i < listeners.length; i++) {
-            if (listeners[i].event == event) {
-              if (listeners[i].fn && typeof listeners[i].fn === 'function') {
-                listeners[i].fn(event,info);
-                listeners[i].once = true;
-              }
-            }
-          }
-          eachUnRegister();
-        },
-        delay
-      );
+      listeners.push({
+        listener: listener,
+        event: event,
+        fn: fn,
+        once: true
+      });
+    } else {
+      constant[event] = event + "vue";
+      onceRegister(listener, event, fn);
     }
   }
   /**
@@ -79,7 +73,12 @@
           for (var i = 0; i < listeners.length; i++) {
             if (listeners[i].event == event) {
               if (listeners[i].fn && typeof listeners[i].fn === 'function') {
-                listeners[i].fn(event,info);
+                if(info){
+                  listeners[i].fn(info,event);
+                }else{
+                  listeners[i].fn(event);
+                }
+                eachUnRegister(listeners[i].listener);
               }
             }
           }
@@ -110,7 +109,7 @@
       on: register,
       off: unRegister,
       emit: doNotify,
-      once: onceNotify
+      once: onceRegister
     }
 
     Vue.prototype.keeper = keeper;
