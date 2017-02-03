@@ -2,10 +2,10 @@
 event plus with vue.js
 **vue-keeper uses its own event queue, and not the Vue itself.** 
 
-##Installation 
+## Installation 
 npm install vue-keeper --save-dev
 
-##how to import
+## how to import
 ```
 import keeper from 'vue-keeper';
 //or
@@ -15,7 +15,7 @@ Vue.use(keeper);
 ```
 If you use `<script>` to introduce vue-keeper. Can directly look at the next step.
 
-##how to use
+## how to use
 ```
 var vm = new Vue();
 
@@ -45,23 +45,23 @@ beforeDestroy() {
 }
 ```
 
-##api
-###on
+## api
+### on
 ```
 Vue.keepr.on(listener-name,event,function(params,event-name){})
 //params is not necessary.
 //event-name is necessary
 ```
-###once
+### once
 Ditto，this event will only trigger once
 
-###emit
+### emit
 ```
 Vue.keepr.emit(event,params);
 //params is not necessary.
 ```
 
-###off
+### off
 ```
 Vue.keepr.off(listener-name);
 ```
